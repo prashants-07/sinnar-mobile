@@ -152,4 +152,71 @@ footer a:hover {
         width: 100%;
     }
 }
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .hero img {
+    height: 250px;
+  }
+
+  .hero-text h1 {
+    font-size: 22px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .service-box {
+    width: 90%;
+  }
+
+  input, textarea {
+    width: 90%;
+  }
+
+}
+
+/* ===== EXTRA SMALL DEVICES ===== */
+@media (max-width: 480px) {
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .hero img {
+    height: 200px;
+  }
+
+  .hero-text {
+    padding: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 18px;
+  }
+
+}
 
