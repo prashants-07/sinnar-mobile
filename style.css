@@ -3,6 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* ===== HEADER ===== */
 header {
     display: flex;
     justify-content: space-between;
@@ -21,6 +22,7 @@ nav a:hover {
     color: #00c3ff;
 }
 
+/* ===== HERO ===== */
 .hero {
     background: linear-gradient(to right,#000000a0,#000000a0),
     url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9');
@@ -37,11 +39,13 @@ nav a:hover {
     text-decoration: none;
 }
 
+/* ===== SECTION ===== */
 .section {
     padding: 50px;
     text-align: center;
 }
 
+/* ===== CARDS ===== */
 .cards {
     display: flex;
     justify-content: center;
@@ -49,22 +53,57 @@ nav a:hover {
     flex-wrap: wrap;
 }
 
+/* ===== PRODUCTS GRID ===== */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== CARD DESIGN ===== */
 .card {
-    width: 250px;
     background: white;
-    border-radius: 10px;
-    overflow: hidden;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
 }
 
+.card:active {
+    transform: scale(0.97);
+}
+
+/* IMAGE FIX */
 .card img {
     width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
+/* TEXT */
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* ===== MAP ===== */
 iframe {
     width: 100%;
     height: 300px;
@@ -72,14 +111,7 @@ iframe {
     margin-top: 20px;
 }
 
-footer {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-
-/* WhatsApp Button */
+/* ===== WHATSAPP BUTTON ===== */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -91,45 +123,7 @@ footer {
     border-radius: 50%;
 }
 
-/* Mobile */
-@media(max-width:768px){
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-footer {
-    background: #111;
-    color: white;
-    padding: 40px 20px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.footer-container div {
-    margin: 10px;
-}
-
-footer a {
-    color: #00c3ff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-.copy {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
+/* ===== FAQ ===== */
 .faq-container {
     display: flex;
     gap: 40px;
@@ -146,133 +140,74 @@ footer a:hover {
     margin-bottom: 15px;
 }
 
-/* Mobile view */
-@media(max-width:768px){
+/* ===== FOOTER (VERTICAL FIX) ===== */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* IMPORTANT: vertical layout */
+.footer-container {
+    display: flex;
+    flex-direction: column;   /* THIS LINE FIXES YOUR ISSUE */
+    align-items: center;
+}
+
+.footer-container div {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #00c3ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.copy {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .faq-column {
         width: 100%;
     }
-}
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 768px) {
 
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 5px;
-  }
-
-  .hero img {
-    height: 250px;
-  }
-
-  .hero-text h1 {
-    font-size: 22px;
-  }
-
-  .hero-text p {
-    font-size: 14px;
-  }
-
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card {
-    width: 100%;
-  }
-
-  .service-box {
-    width: 90%;
-  }
-
-  input, textarea {
-    width: 90%;
-  }
-
+    input, textarea {
+        width: 90%;
+    }
 }
 
-/* ===== EXTRA SMALL DEVICES ===== */
+/* ===== EXTRA SMALL ===== */
 @media (max-width: 480px) {
 
-  .products {
-    grid-template-columns: 1fr;
-  }
-
-  .hero img {
-    height: 200px;
-  }
-
-  .hero-text {
-    padding: 10px;
-  }
-
-  .hero-text h1 {
-    font-size: 18px;
-  }
-
-}
-
-/* ===== PRODUCTS GRID FIX ===== */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-/* ===== CARD DESIGN ===== */
-.card {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* IMAGE FIX */
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* TEXT ALIGNMENT */
-.card h3 {
-  margin: 10px 0 5px;
-  font-size: 16px;
-}
-
-.card p {
-  font-size: 14px;
-  color: gray;
-}
-
-@media (max-width: 768px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .products {
-    grid-template-columns: 1fr;
-  }
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  transition: 0.3s;
+    .products {
+        grid-template-columns: 1fr;
+    }
 }
